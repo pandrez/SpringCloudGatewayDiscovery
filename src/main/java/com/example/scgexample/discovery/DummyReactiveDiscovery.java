@@ -31,6 +31,7 @@ public class DummyReactiveDiscovery implements ReactiveDiscoveryClient {
         LOGGER.info("Calling GetInstances");
         return Mono.fromCallable(() -> {
                     try {
+                        //Simulating a blocking call
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
                         LOGGER.error("Interrupt Error",e);
@@ -48,6 +49,7 @@ public class DummyReactiveDiscovery implements ReactiveDiscoveryClient {
 
         return Mono.fromCallable(() -> {
             try {
+                //Simulating a blocking call
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 LOGGER.error("Interrupt Error",e);
